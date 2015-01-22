@@ -55,3 +55,4 @@ Options
     --config, -c [file]   Path to config file
     --trace, -t           Show full stack traces
     --defer, -d           Defers execution of tests, requiring a manual call to `jasmine.getEnv().execute();`
+    --browser, -b         Leave runner.html in filesystem so tests can be run in a browser
