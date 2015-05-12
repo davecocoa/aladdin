@@ -11,10 +11,11 @@ class PhantomJasmineRunner
 
   get_status: -> @page.evaluate(-> console_reporter.status)
 
-  terminate: ->
+  terminate: =>
     switch @get_status()
       when "success" then @exit_func 0
       when "fail"    then @exit_func 1
+      when "running" then setTimeout(@terminate, 7)
       else                @exit_func 2
 
 # Script Begin
